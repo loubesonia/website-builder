@@ -1,0 +1,1004 @@
+/* ================================================================
+   LADY BOSS AESTHETICS — GoHighLevel Custom CSS
+   Paste this entire block into:
+   Settings → Custom CSS  (site-wide)
+   — OR —
+   Page Settings → Custom CSS / Head Code (per page)
+   ================================================================ */
+
+/* ── 1. GOOGLE FONTS IMPORT ─────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+/* ── 2. BRAND TOKENS ─────────────────────────────────────────── */
+:root {
+  --lba-gold:        #C9A96E;
+  --lba-gold-light:  #E8D5B0;
+  --lba-gold-dark:   #9E7A42;
+  --lba-plum:        #2D1B2E;
+  --lba-plum-mid:    #4A2D4C;
+  --lba-rose:        #E8C4C4;
+  --lba-rose-dark:   #C49898;
+  --lba-blush:       #F9F0EE;
+  --lba-ivory:       #FDFAF6;
+  --lba-white:       #FFFFFF;
+  --lba-footer-bg:   #1A0F1B;
+  --lba-text:        #2D1B2E;
+  --lba-text-mid:    #6B5060;
+  --lba-text-light:  #9B8090;
+  --lba-border:      #EDE0DC;
+  --lba-serif:       'Cormorant Garamond', Georgia, serif;
+  --lba-sans:        'Jost', system-ui, sans-serif;
+  --lba-radius:      12px;
+  --lba-radius-lg:   24px;
+  --lba-shadow:      0 4px 32px rgba(45, 27, 46, 0.10);
+  --lba-shadow-lg:   0 12px 60px rgba(45, 27, 46, 0.16);
+}
+
+/* ── 3. GLOBAL RESETS ────────────────────────────────────────── */
+/* Applies Jost to the whole GHL page body */
+body,
+.main-section,
+.cf-page-content,
+.funnelish-page,
+#app {
+  font-family: var(--lba-sans) !important;
+  color: var(--lba-text) !important;
+  background-color: var(--lba-ivory) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 4. TYPOGRAPHY ───────────────────────────────────────────── */
+
+/* All headings → Cormorant Garamond */
+h1, h2, h3, h4, h5, h6,
+.headline-font {
+  font-family: var(--lba-serif) !important;
+  font-weight: 400 !important;
+  color: var(--lba-plum) !important;
+  line-height: 1.2 !important;
+}
+
+h1 { font-size: clamp(2.8rem, 5.5vw, 4.5rem) !important; }
+h2 { font-size: clamp(2rem, 4vw, 3rem) !important; }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem) !important; }
+h4 { font-size: 1.2rem !important; }
+
+/* Italic/em inside headings → gold */
+h1 em, h2 em, h3 em,
+h1 i,  h2 i,  h3 i {
+  font-style: italic !important;
+  color: var(--lba-gold-dark) !important;
+}
+
+/* Body paragraphs */
+p {
+  font-family: var(--lba-sans) !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  color: var(--lba-text-light) !important;
+}
+
+/* Links */
+a {
+  color: var(--lba-gold-dark);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover { color: var(--lba-plum); }
+
+/* ── 5. EYEBROW / LABEL TEXT ─────────────────────────────────── */
+/*
+  In GHL, add the class  lba-eyebrow  to a Text element
+  that sits above your heading for the small gold label line.
+*/
+.lba-eyebrow {
+  display: block !important;
+  font-family: var(--lba-sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: var(--lba-gold) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Light variant — for dark/plum section backgrounds */
+.lba-eyebrow--light {
+  color: var(--lba-gold-light) !important;
+}
+
+/* ── 6. SECTION BACKGROUNDS ──────────────────────────────────── */
+/*
+  Add these classes to GHL Section elements via
+  Section Settings → Additional CSS Class
+*/
+
+/* Default page background */
+.lba-section {
+  background-color: var(--lba-ivory) !important;
+}
+
+/* Soft blush tint (alternating rows) */
+.lba-section--blush {
+  background-color: var(--lba-blush) !important;
+}
+
+/* Deep plum (dark) */
+.lba-section--dark {
+  background-color: var(--lba-plum) !important;
+}
+.lba-section--dark h1,
+.lba-section--dark h2,
+.lba-section--dark h3,
+.lba-section--dark h4 {
+  color: var(--lba-ivory) !important;
+}
+.lba-section--dark h1 em,
+.lba-section--dark h2 em,
+.lba-section--dark h3 em {
+  color: var(--lba-gold-light) !important;
+}
+.lba-section--dark p { color: rgba(253, 250, 246, 0.75) !important; }
+.lba-section--dark .lba-eyebrow { color: var(--lba-gold-light) !important; }
+
+/* Very dark footer / outro */
+.lba-section--footer {
+  background-color: var(--lba-footer-bg) !important;
+}
+.lba-section--footer h1,
+.lba-section--footer h2,
+.lba-section--footer h3,
+.lba-section--footer p,
+.lba-section--footer li,
+.lba-section--footer a {
+  color: rgba(253, 250, 246, 0.6) !important;
+}
+
+/* Gold accent row (e.g. stats banner) */
+.lba-section--gold {
+  background: linear-gradient(135deg, var(--lba-gold-dark), var(--lba-gold)) !important;
+}
+.lba-section--gold h1,
+.lba-section--gold h2,
+.lba-section--gold h3,
+.lba-section--gold p {
+  color: var(--lba-plum) !important;
+}
+
+/* ── 7. BUTTONS ──────────────────────────────────────────────── */
+/*
+  In GHL button elements, add these classes via
+  Element Settings → Custom CSS Class
+*/
+
+/* Primary — gold fill */
+.lba-btn,
+.lba-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.85rem 2.25rem !important;
+  border-radius: 100px !important;
+  font-family: var(--lba-sans) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  background-color: var(--lba-gold) !important;
+  color: var(--lba-plum) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background 0.25s, color 0.25s, box-shadow 0.25s !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+.lba-btn:hover,
+.lba-btn-primary:hover {
+  background-color: var(--lba-gold-dark) !important;
+  color: var(--lba-white) !important;
+  box-shadow: 0 6px 24px rgba(158, 122, 66, 0.35) !important;
+}
+
+/* Light / ivory fill — for dark backgrounds */
+.lba-btn-light {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.85rem 2.25rem !important;
+  border-radius: 100px !important;
+  font-family: var(--lba-sans) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  background-color: var(--lba-ivory) !important;
+  color: var(--lba-plum) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.25s !important;
+  text-decoration: none !important;
+}
+.lba-btn-light:hover {
+  background-color: var(--lba-white) !important;
+  box-shadow: 0 6px 28px rgba(45, 27, 46, 0.18) !important;
+}
+
+/* Ghost / outline — for hero overlays */
+.lba-btn-ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.85rem 2.25rem !important;
+  border-radius: 100px !important;
+  font-family: var(--lba-sans) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  background-color: transparent !important;
+  color: var(--lba-ivory) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  cursor: pointer !important;
+  transition: all 0.25s !important;
+  text-decoration: none !important;
+}
+.lba-btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--lba-ivory) !important;
+}
+
+/* Large size modifier — add alongside any btn class */
+.lba-btn-lg,
+.lba-btn.lba-btn-lg,
+.lba-btn-primary.lba-btn-lg,
+.lba-btn-light.lba-btn-lg,
+.lba-btn-ghost.lba-btn-lg {
+  padding: 1.1rem 2.75rem !important;
+  font-size: 1rem !important;
+}
+
+/* Full-width modifier */
+.lba-btn-full,
+.lba-btn.lba-btn-full {
+  width: 100% !important;
+  display: flex !important;
+}
+
+/* Override GHL's default button styles globally */
+.hl-btn,
+button.hl-btn,
+a.hl-btn {
+  border-radius: 100px !important;
+  font-family: var(--lba-sans) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* ── 8. SERVICE / FEATURE CARDS ──────────────────────────────── */
+/*
+  Add  lba-card  to a GHL Column or Custom Element
+*/
+.lba-card {
+  background: var(--lba-white) !important;
+  border-radius: var(--lba-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--lba-shadow) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  height: 100% !important;
+}
+.lba-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--lba-shadow-lg) !important;
+}
+.lba-card__img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+.lba-card__body {
+  padding: 1.5rem 1.75rem 2rem !important;
+}
+.lba-card__body h3 {
+  font-size: 1.35rem !important;
+  margin-bottom: 0.6rem !important;
+  color: var(--lba-plum) !important;
+}
+.lba-card__body p {
+  font-size: 0.875rem !important;
+  color: var(--lba-text-light) !important;
+  margin-bottom: 1rem !important;
+}
+.lba-card__link {
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  color: var(--lba-gold-dark) !important;
+  letter-spacing: 0.04em !important;
+}
+.lba-card__link:hover { opacity: 0.75 !important; }
+
+/* ── 9. TEAM / PERSON CARDS ─────────────────────────────────── */
+.lba-team-card {
+  background: var(--lba-white) !important;
+  border-radius: var(--lba-radius-lg) !important;
+  overflow: hidden !important;
+  box-shadow: var(--lba-shadow) !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+}
+.lba-team-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--lba-shadow-lg) !important;
+}
+.lba-team-card img {
+  width: 100% !important;
+  height: 320px !important;
+  object-fit: cover !important;
+  object-position: top !important;
+  filter: grayscale(0.15) !important;
+  transition: filter 0.3s !important;
+}
+.lba-team-card:hover img { filter: grayscale(0) !important; }
+.lba-team-card__body { padding: 1.75rem !important; }
+.lba-team-card__role {
+  display: block !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: var(--lba-gold-dark) !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* ── 10. TESTIMONIAL CARDS ───────────────────────────────────── */
+/*
+  Add  lba-testimonial  to a GHL Column element
+*/
+.lba-testimonial {
+  background: var(--lba-white) !important;
+  border-radius: var(--lba-radius-lg) !important;
+  padding: 2rem 2.25rem !important;
+  box-shadow: var(--lba-shadow) !important;
+  position: relative !important;
+  height: 100% !important;
+}
+.lba-testimonial__stars {
+  color: var(--lba-gold) !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 1.1rem !important;
+  display: block !important;
+}
+.lba-testimonial blockquote,
+.lba-testimonial__quote {
+  font-family: var(--lba-serif) !important;
+  font-size: 1.05rem !important;
+  font-style: italic !important;
+  color: var(--lba-text) !important;
+  line-height: 1.75 !important;
+  margin-bottom: 1.5rem !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.lba-testimonial__author {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+}
+.lba-testimonial__avatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--lba-gold-light) !important;
+  flex-shrink: 0 !important;
+}
+.lba-testimonial__name {
+  display: block !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: var(--lba-plum) !important;
+}
+.lba-testimonial__treatment {
+  font-size: 0.75rem !important;
+  color: var(--lba-text-light) !important;
+}
+
+/* ── 11. STATS ROW ───────────────────────────────────────────── */
+/*
+  Add  lba-stat  to individual column/text block
+*/
+.lba-stat { text-align: center !important; }
+.lba-stat__number {
+  display: block !important;
+  font-family: var(--lba-serif) !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 300 !important;
+  color: var(--lba-gold) !important;
+  line-height: 1 !important;
+  margin-bottom: 0.4rem !important;
+}
+.lba-stat__label {
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  color: var(--lba-text-light) !important;
+  font-weight: 500 !important;
+}
+/* On dark backgrounds */
+.lba-section--dark .lba-stat__number { color: var(--lba-gold-light) !important; }
+.lba-section--dark .lba-stat__label  { color: rgba(253, 250, 246, 0.55) !important; }
+
+/* ── 12. PRICING / MEMBERSHIP CARDS ─────────────────────────── */
+.lba-plan {
+  background: var(--lba-white) !important;
+  border: 1.5px solid var(--lba-border) !important;
+  border-radius: var(--lba-radius-lg) !important;
+  padding: 2.5rem 2rem !important;
+  text-align: center !important;
+  position: relative !important;
+  transition: box-shadow 0.3s, transform 0.3s !important;
+}
+.lba-plan:hover {
+  box-shadow: var(--lba-shadow-lg) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Featured / highlighted plan */
+.lba-plan--featured {
+  background: var(--lba-plum) !important;
+  border-color: var(--lba-plum) !important;
+  transform: scale(1.04) !important;
+}
+.lba-plan--featured:hover { transform: scale(1.04) translateY(-4px) !important; }
+.lba-plan--featured h3,
+.lba-plan--featured h4 { color: var(--lba-gold-light) !important; }
+.lba-plan--featured p,
+.lba-plan--featured li { color: rgba(253, 250, 246, 0.82) !important; }
+
+.lba-plan__badge {
+  display: inline-block !important;
+  position: absolute !important;
+  top: -14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: var(--lba-gold) !important;
+  color: var(--lba-plum) !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  padding: 0.3rem 1.1rem !important;
+  border-radius: 100px !important;
+  white-space: nowrap !important;
+}
+.lba-plan__name {
+  font-family: var(--lba-serif) !important;
+  font-size: 1.7rem !important;
+  font-weight: 400 !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.lba-plan__price {
+  font-family: var(--lba-serif) !important;
+  font-size: 3.5rem !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  color: var(--lba-plum) !important;
+  margin-bottom: 1.5rem !important;
+}
+.lba-plan--featured .lba-plan__price { color: var(--lba-ivory) !important; }
+.lba-plan__currency {
+  font-size: 1.5rem !important;
+  vertical-align: super !important;
+}
+.lba-plan__period {
+  font-size: 1rem !important;
+  color: var(--lba-text-light) !important;
+}
+.lba-plan--featured .lba-plan__period { color: rgba(253, 250, 246, 0.5) !important; }
+.lba-plan__features {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 2rem !important;
+  text-align: left !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+}
+.lba-plan__features li {
+  font-size: 0.875rem !important;
+  color: var(--lba-text-mid) !important;
+}
+.lba-plan--featured .lba-plan__features li { color: rgba(253, 250, 246, 0.82) !important; }
+
+/* ── 13. GHL FORM OVERRIDES ──────────────────────────────────── */
+/*
+  GHL native form inputs — apply Lady Boss styling globally
+*/
+.hl-form input,
+.hl-form select,
+.hl-form textarea,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  font-family: var(--lba-sans) !important;
+  border: 1.5px solid var(--lba-border) !important;
+  border-radius: var(--lba-radius) !important;
+  padding: 0.8rem 1rem !important;
+  background: var(--lba-ivory) !important;
+  color: var(--lba-text) !important;
+  font-size: 0.9rem !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+  width: 100% !important;
+}
+.hl-form input:focus,
+.hl-form select:focus,
+.hl-form textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--lba-gold) !important;
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.18) !important;
+}
+.hl-form label,
+label {
+  font-family: var(--lba-sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  color: var(--lba-text-mid) !important;
+  margin-bottom: 0.4rem !important;
+  display: block !important;
+}
+/* GHL submit button */
+.hl-form button[type="submit"],
+.hl-form input[type="submit"],
+button[type="submit"] {
+  background: var(--lba-gold) !important;
+  color: var(--lba-plum) !important;
+  border: none !important;
+  border-radius: 100px !important;
+  padding: 1rem 2.5rem !important;
+  font-family: var(--lba-sans) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: background 0.25s, color 0.25s !important;
+}
+button[type="submit"]:hover {
+  background: var(--lba-gold-dark) !important;
+  color: var(--lba-white) !important;
+}
+
+/* Form wrapper card (add class  lba-form-card  to a GHL container) */
+.lba-form-card {
+  background: var(--lba-white) !important;
+  border-radius: var(--lba-radius-lg) !important;
+  padding: 2.5rem !important;
+  box-shadow: var(--lba-shadow-lg) !important;
+}
+@media (max-width: 480px) {
+  .lba-form-card { padding: 1.5rem !important; }
+}
+
+/* ── 14. NAVIGATION / HEADER ─────────────────────────────────── */
+/*
+  GHL navigation bar overrides
+*/
+nav,
+.navbar,
+.hl-navbar,
+header {
+  font-family: var(--lba-sans) !important;
+}
+
+/* Nav link styling */
+nav a,
+.navbar a,
+.hl-navbar a {
+  font-family: var(--lba-sans) !important;
+  font-size: 0.875rem !important;
+  color: var(--lba-text-mid) !important;
+  font-weight: 400 !important;
+  transition: color 0.2s !important;
+}
+nav a:hover,
+.navbar a:hover { color: var(--lba-gold-dark) !important; }
+
+/* Header / nav background on scroll — GHL adds a class; adjust if needed */
+header.scrolled,
+.navbar.scrolled {
+  background: rgba(253, 250, 246, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 24px rgba(45, 27, 46, 0.10) !important;
+}
+
+/* Logo text inside GHL nav */
+.lba-logo-text {
+  font-family: var(--lba-serif) !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: var(--lba-plum) !important;
+}
+.lba-logo-icon { color: var(--lba-gold) !important; }
+
+/* ── 15. HERO SECTION HELPERS ────────────────────────────────── */
+/*
+  Add these classes to hero section elements in GHL
+*/
+
+/* Full-viewport hero (add to Section) */
+.lba-hero {
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Dark plum gradient overlay (add to Section background overlay) */
+.lba-hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 27, 46, 0.82) 0%,
+    rgba(45, 27, 46, 0.52) 60%,
+    rgba(201, 169, 110, 0.12) 100%
+  ) !important;
+}
+
+/* Hero headline */
+.lba-hero-title {
+  font-family: var(--lba-serif) !important;
+  font-size: clamp(2.8rem, 6vw, 5rem) !important;
+  font-weight: 300 !important;
+  color: var(--lba-white) !important;
+  line-height: 1.1 !important;
+}
+.lba-hero-title em, .lba-hero-title i {
+  font-style: italic !important;
+  color: var(--lba-gold-light) !important;
+}
+
+/* Hero subtitle */
+.lba-hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  max-width: 50ch !important;
+}
+
+/* Eyebrow on hero */
+.lba-hero-eyebrow {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: var(--lba-gold-light) !important;
+  display: block !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* ── 16. MARQUEE / SCROLLING STRIP ───────────────────────────── */
+/*
+  Add  lba-marquee-strip  to a Section, put a Row inside with  lba-marquee-track
+*/
+.lba-marquee-strip {
+  background: var(--lba-plum) !important;
+  padding: 0.9rem 0 !important;
+  overflow: hidden !important;
+}
+.lba-marquee-track {
+  display: flex !important;
+  gap: 2rem !important;
+  white-space: nowrap !important;
+  animation: lbaMarquee 30s linear infinite !important;
+  width: max-content !important;
+}
+.lba-marquee-track span {
+  font-size: 0.78rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--lba-ivory) !important;
+  font-weight: 400 !important;
+}
+.lba-marquee-track .lba-dot {
+  color: var(--lba-gold) !important;
+  font-size: 0.6rem !important;
+}
+@keyframes lbaMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── 17. DIVIDERS & DECORATIVE ELEMENTS ─────────────────────── */
+
+/* Gold thin divider line */
+.lba-divider {
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, var(--lba-gold-light), transparent) !important;
+  margin: 2rem auto !important;
+  max-width: 200px !important;
+}
+
+/* Wide section divider */
+.lba-divider--wide {
+  max-width: 600px !important;
+}
+
+/* Decorative ✦ star (add as a text element) */
+.lba-star {
+  color: var(--lba-gold) !important;
+  font-size: 1.2rem !important;
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ── 18. PROCESS / STEPS ─────────────────────────────────────── */
+.lba-step { text-align: center !important; padding: 1.5rem 1rem !important; }
+.lba-step__number {
+  font-family: var(--lba-serif) !important;
+  font-size: 4rem !important;
+  font-weight: 300 !important;
+  color: var(--lba-gold-light) !important;
+  line-height: 1 !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+}
+.lba-step__icon {
+  font-size: 1.6rem !important;
+  color: var(--lba-gold) !important;
+  display: block !important;
+  margin-bottom: 1rem !important;
+}
+.lba-step h3 { margin-bottom: 0.75rem !important; }
+.lba-step p { font-size: 0.875rem !important; }
+
+/* ── 19. IMAGE UTILITIES ─────────────────────────────────────── */
+
+/* Rounded corners on images */
+.lba-img-rounded {
+  border-radius: var(--lba-radius-lg) !important;
+  overflow: hidden !important;
+}
+.lba-img-rounded img {
+  border-radius: var(--lba-radius-lg) !important;
+}
+
+/* Gold border frame */
+.lba-img-framed img {
+  border-radius: var(--lba-radius-lg) !important;
+  border: 4px solid var(--lba-ivory) !important;
+  box-shadow: var(--lba-shadow-lg) !important;
+}
+
+/* Subtle grayscale with color on hover */
+.lba-img-grayscale img {
+  filter: grayscale(0.2) !important;
+  transition: filter 0.35s !important;
+}
+.lba-img-grayscale:hover img { filter: none !important; }
+
+/* ── 20. FLOATING WHATSAPP BUTTON ────────────────────────────── */
+/*
+  In GHL, add a custom HTML element / sticky element with  lba-whatsapp
+  Or add the class to GHL's built-in chat widget
+*/
+.lba-whatsapp {
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  z-index: 9999 !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  color: var(--lba-white) !important;
+  display: grid !important;
+  place-items: center !important;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45) !important;
+  transition: transform 0.25s, box-shadow 0.25s !important;
+  text-decoration: none !important;
+}
+.lba-whatsapp:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 32px rgba(37, 211, 102, 0.55) !important;
+}
+
+/* ── 21. SCROLL REVEAL ANIMATION ─────────────────────────────── */
+/*
+  Add  lba-reveal  to any element you want to fade in on scroll.
+  The JS below drives it — paste into GHL's Custom JS / Head Code field.
+*/
+.lba-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.lba-reveal.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Stagger delays for child cards in a grid */
+.lba-reveal:nth-child(2) { transition-delay: 0.1s; }
+.lba-reveal:nth-child(3) { transition-delay: 0.2s; }
+.lba-reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* ── 22. NOTIFICATION / BADGE ────────────────────────────────── */
+.lba-badge {
+  display: inline-block !important;
+  background: var(--lba-gold) !important;
+  color: var(--lba-plum) !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  padding: 0.3rem 1rem !important;
+  border-radius: 100px !important;
+}
+.lba-badge--plum {
+  background: var(--lba-plum) !important;
+  color: var(--lba-gold-light) !important;
+}
+.lba-badge--rose {
+  background: var(--lba-rose) !important;
+  color: var(--lba-plum) !important;
+}
+
+/* ── 23. INFO LIST (contact / clinic details) ────────────────── */
+.lba-info-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important;
+}
+.lba-info-list li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+  font-size: 0.9rem !important;
+  color: var(--lba-text-mid) !important;
+}
+.lba-info-list__icon {
+  flex-shrink: 0 !important;
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(201, 169, 110, 0.15) !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  color: var(--lba-gold) !important;
+  font-size: 0.9rem !important;
+}
+.lba-info-list strong {
+  display: block !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--lba-text-mid) !important;
+  margin-bottom: 0.15rem !important;
+}
+
+/* On dark sections */
+.lba-section--dark .lba-info-list li  { color: rgba(253, 250, 246, 0.75) !important; }
+.lba-section--dark .lba-info-list strong { color: var(--lba-gold-light) !important; }
+
+/* ── 24. PILLAR / ICON FEATURE LIST ─────────────────────────── */
+.lba-pillar-list {
+  list-style: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important;
+}
+.lba-pillar-list li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+}
+.lba-pillar-list__icon {
+  flex-shrink: 0 !important;
+  width: 42px !important;
+  height: 42px !important;
+  background: var(--lba-blush) !important;
+  border-radius: 10px !important;
+  display: grid !important;
+  place-items: center !important;
+  color: var(--lba-gold-dark) !important;
+  font-size: 1.1rem !important;
+}
+.lba-pillar-list strong {
+  display: block !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: var(--lba-plum) !important;
+  margin-bottom: 0.2rem !important;
+}
+.lba-pillar-list p { font-size: 0.875rem !important; margin: 0 !important; }
+
+/* ── 25. RESPONSIVE HELPERS ──────────────────────────────────── */
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .lba-hide-mobile { display: none !important; }
+}
+
+/* Hide on desktop */
+@media (min-width: 768px) {
+  .lba-hide-desktop { display: none !important; }
+}
+
+/* Full-width on mobile */
+@media (max-width: 767px) {
+  .lba-full-mobile {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .lba-center-mobile { text-align: center !important; }
+  .lba-plan--featured { transform: none !important; }
+}
+
+/* ── 26. SPACING UTILITIES ───────────────────────────────────── */
+.lba-pt-sm  { padding-top:    1.5rem  !important; }
+.lba-pt-md  { padding-top:    3rem    !important; }
+.lba-pt-lg  { padding-top:    5rem    !important; }
+.lba-pb-sm  { padding-bottom: 1.5rem  !important; }
+.lba-pb-md  { padding-bottom: 3rem    !important; }
+.lba-pb-lg  { padding-bottom: 5rem    !important; }
+.lba-py-sm  { padding-block:  1.5rem  !important; }
+.lba-py-md  { padding-block:  3rem    !important; }
+.lba-py-lg  { padding-block:  clamp(4rem, 10vw, 8rem) !important; }
+.lba-mt-sm  { margin-top:     1rem    !important; }
+.lba-mt-md  { margin-top:     2rem    !important; }
+.lba-mb-sm  { margin-bottom:  1rem    !important; }
+.lba-mb-md  { margin-bottom:  2rem    !important; }
+
+/* ── 27. TEXT COLOUR UTILITIES ───────────────────────────────── */
+.lba-text-gold       { color: var(--lba-gold)       !important; }
+.lba-text-gold-light { color: var(--lba-gold-light) !important; }
+.lba-text-plum       { color: var(--lba-plum)       !important; }
+.lba-text-ivory      { color: var(--lba-ivory)      !important; }
+.lba-text-mid        { color: var(--lba-text-mid)   !important; }
+.lba-text-light      { color: var(--lba-text-light) !important; }
+
+/* ── 28. BACKGROUND COLOUR UTILITIES ────────────────────────── */
+.lba-bg-gold    { background-color: var(--lba-gold)    !important; }
+.lba-bg-plum    { background-color: var(--lba-plum)    !important; }
+.lba-bg-blush   { background-color: var(--lba-blush)   !important; }
+.lba-bg-ivory   { background-color: var(--lba-ivory)   !important; }
+.lba-bg-white   { background-color: var(--lba-white)   !important; }
+
+/* ----------------------------------------------------------------
+   SCROLL REVEAL JS — paste into GHL Page Settings → Custom JS
+   (or a Custom Code element at the bottom of the page)
+   ----------------------------------------------------------------
+   <script>
+   (function(){
+     var els = document.querySelectorAll('.lba-reveal');
+     if(!('IntersectionObserver' in window)){
+       els.forEach(function(el){ el.classList.add('is-visible'); });
+       return;
+     }
+     var obs = new IntersectionObserver(function(entries){
+       entries.forEach(function(e){
+         if(e.isIntersecting){
+           e.target.classList.add('is-visible');
+           obs.unobserve(e.target);
+         }
+       });
+     },{threshold:0.12});
+     els.forEach(function(el){ obs.observe(el); });
+   })();
+   </script>
+   ---------------------------------------------------------------- */
